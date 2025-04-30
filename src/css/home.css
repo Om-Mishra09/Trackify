@@ -1,0 +1,130 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Home Container */
+.home-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Background Video */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Hide native video controls (best-effort) */
+video::-webkit-media-controls {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+/* Overlay Content */
+.content-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Main Heading Text */
+.typing-text {
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', sans-serif;
+  text-shadow: 1px 1px 5px #000;
+  line-height: 1.5;
+}
+
+/* Subheading Text */
+.fixed-subtext {
+  font-family: Georgia, serif;
+  font-size: 1.3rem;
+  margin-top: 12px;
+  opacity: 0.85;
+  text-shadow: 1px 1px 5px #000;
+}
+
+/* Gradient bottom fade (optional visual detail) */
+.content-overlay::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.8)); */
+  z-index: 2;
+}
+
+/* Scroll Down Arrow Animation */
+.scroll-down-arrow {
+  position: absolute;
+  bottom: 20px;
+  font-size: 2rem;
+  animation: bounce 2s infinite;
+  opacity: 0.7;
+}
+
+/* Bounce Keyframes */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .typing-text {
+    font-size: 2.2rem;
+  }
+
+  .fixed-subtext {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .typing-text {
+    font-size: 1.8rem;
+  }
+
+  .fixed-subtext {
+    font-size: 0.95rem;
+  }
+
+  .scroll-down-arrow {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,130 @@
+.adddata-section {
+  position: relative;
+  padding: 80px 20px;
+  min-height: 100vh;
+  background: #0f0f0f;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 10% 10%, #4fc3f7 0%, transparent 20%),
+    radial-gradient(circle at 90% 30%, #7e57c2 0%, transparent 20%),
+    radial-gradient(circle at 50% 80%, #f06292 0%, transparent 20%);
+  background-size: 200% 200%;
+  animation: bgAnim 15s ease-in-out infinite;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+@keyframes bgAnim {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.adddata-title {
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.adddata-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 500px;
+  z-index: 2;
+}
+
+.adddata-form input {
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+.add-data-button,
+.submit-button {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.add-data-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #fff;
+  color: #fff;
+  backdrop-filter: blur(8px);
+}
+
+.add-data-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.submit-button {
+  background-color: #4fc3f7;
+  border: none;
+  color: white;
+  border-radius: 10px;
+}
+
+.submit-button:hover {
+  background-color: #0288d1;
+}
+
+.fixed-bottom-title {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(15, 15, 15, 0.9);
+  color: white;
+  text-align: center;
+  padding: 16px 0;
+  font-size: 1.5rem;
+  font-family: "Bungee Hairline", sans-serif;
+  z-index: 1000;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .adddata-title {
+    font-size: 2rem;
+  }
+
+  .add-data-button,
+  .submit-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .fixed-bottom-title {
+    font-size: 1.1rem;
+    padding: 12px 0;
+  }
+}

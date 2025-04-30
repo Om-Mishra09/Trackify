@@ -1,0 +1,44 @@
+/* Footer Container */
+.custom-footer {
+    background-color: #0a0a0a;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 2rem 1rem;
+    text-align: center;
+    font-family: inherit;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    animation: slideUp 0.8s ease forwards;
+    position: relative;
+  }
+  
+  /* Footer Text Paragraphs */
+  .footer-text p {
+    margin: 0.3rem 0;
+    line-height: 1.5;
+  }
+  
+  /* Animation Keyframes */
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 600px) {
+    .custom-footer {
+      font-size: 0.9rem;
+      padding: 1.5rem 0.5rem;
+    }
+  
+    .footer-text p {
+      font-size: 0.95rem;
+    }
+  }
+  
